@@ -16,7 +16,13 @@ import {
 import axios from 'axios'
 import CIcon from '@coreui/icons-react'
 import { cilPeople } from '@coreui/icons'
+
 import avatar1 from 'src/assets/images/avatars/1.jpg'
+import avatar2 from 'src/assets/images/avatars/2.jpg'
+import avatar3 from 'src/assets/images/avatars/3.jpg'
+import avatar4 from 'src/assets/images/avatars/5.jpg'
+import avatar5 from 'src/assets/images/avatars/5.jpg'
+import avatar6 from 'src/assets/images/avatars/6.jpg'
 
 const UserList = () => {
   const [users, setUsers] = useState([])
@@ -83,6 +89,7 @@ const UserList = () => {
                 <CTableHeaderCell className="bg-body-tertiary">User</CTableHeaderCell>
                 <CTableHeaderCell className="bg-body-tertiary">Player ID</CTableHeaderCell>
                 <CTableHeaderCell className="bg-body-tertiary">Mobile</CTableHeaderCell>
+                <CTableHeaderCell className="bg-body-tertiary">Wallet Balance</CTableHeaderCell>
                 <CTableHeaderCell className="bg-body-tertiary">Is Guest</CTableHeaderCell>
               </CTableRow>
             </CTableHead>
@@ -100,7 +107,7 @@ const UserList = () => {
                       {startIndex + index + 1}
                     </CTableDataCell> */}
                     <CTableDataCell className="text-center">
-                      <CAvatar size="md" src={user.avatar || avatar1} status={'success'} />
+                      <CAvatar size="md" src={ user.avatarUrl || avatar1} status={'success'} />
                     </CTableDataCell>
                     <CTableDataCell>
                       <div>{user.user_name}</div>
@@ -111,6 +118,7 @@ const UserList = () => {
                     {/* <CTableDataCell>{user.user_name}</CTableDataCell> */}
                     <CTableDataCell>{user.player_id}</CTableDataCell>
                     <CTableDataCell>{user.mobile}</CTableDataCell>
+                    <CTableDataCell>{user.wallet_balance}</CTableDataCell>
                     <CTableDataCell>{user.is_guest ? 'Yes' : 'No'}</CTableDataCell>
                   </CTableRow>
                 ))

@@ -6,6 +6,8 @@ const UserList = React.lazy(() => import('./views/pages/users/UserList.js'))
 
 
 
+
+
 const Colors = React.lazy(() => import('./views/theme/colors/Colors'))
 const Typography = React.lazy(() => import('./views/theme/typography/Typography'))
 

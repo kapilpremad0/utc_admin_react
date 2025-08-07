@@ -40,11 +40,27 @@ const _nav = [
     icon: <CIcon icon={cilUser} customClassName="nav-icon" />,
   },
 
+
+
   {
     component: CNavItem,
-    name: 'Boot',
+    name: 'No Limit Table',
     to: '/boots',
-     icon: <CIcon icon={cilMemory} customClassName="nav-icon" />
+    icon: <CIcon icon={cilMemory} customClassName="nav-icon" />
+  },
+
+  {
+    component: CNavItem,
+    name: 'Rooms',
+    to: '/rooms',
+    icon: <CIcon icon={cilMemory} customClassName="nav-icon" />
+  },
+
+  {
+    component: CNavItem,
+    name: 'Wallet Transaction',
+    to: '/wallet_transactions',
+    icon: <CIcon icon={cilMemory} customClassName="nav-icon" />
 
   },
 
