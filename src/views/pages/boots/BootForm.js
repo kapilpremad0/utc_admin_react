@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import config from '../../../config';
+
 import axios from 'axios'
 import {
   CForm,
@@ -35,7 +37,7 @@ const BootForm = () => {
 
   useEffect(() => {
     if (id) {
-      axios.get(`http://localhost:5000/api/admin/boots/${id}`).then((res) => setFormData(res.data))
+      axios.get(`${config.backendUrl}/api/admin/boots/${id}`).then((res) => setFormData(res.data))
     }
   }, [id])
 
@@ -54,9 +56,9 @@ const BootForm = () => {
     try {
       let res
       if (id) {
-        res = await axios.put(`http://localhost:5000/api/admin/boots/${id}`, formData)
+        res = await axios.put(`${config.backendUrl}/api/admin/boots/${id}`, formData)
       } else {
-        res = await axios.post('http://localhost:5000/api/admin/boots', formData)
+        res = await axios.post(`${config.backendUrl}/api/admin/boots`, formData)
       }
 
       setFormErrors({})

@@ -30,6 +30,11 @@ const WalletTransactionList = () => {
     }
   };
 
+  const renderAvatar = (avatar) => {
+    const fileName = avatar ? `avatar${avatar}.png` : 'default.png';
+    return `${config.backendUrl}/assets/${fileName}`;
+  };
+
   const filteredTransactions = transactions.filter((t) => {
     const user = t.user || {};
     const fieldsToCheck = [
@@ -99,7 +104,7 @@ const WalletTransactionList = () => {
                     </CTableDataCell>
                     <CTableDataCell>
                       <div className="d-flex align-items-center gap-2">
-                        {/* <CAvatar size="md" src={tx.user_id?.avatarUrl} /> */}
+                        <CAvatar size="sm" src={renderAvatar(tx.user_id?.avatar)} />
                         <div>
                           <div>{tx.user_id?.user_name || 'N/A'}</div>
                           <div className="small text-body-secondary text-nowrap">

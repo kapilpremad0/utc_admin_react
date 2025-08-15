@@ -8,6 +8,7 @@ const BootList = React.lazy(() => import('./views/pages/boots/BootList.js'))
 const BootForm = React.lazy(() => import('./views/pages/boots/BootForm.js'))
 
 const WalletTransactionList = React.lazy(() => import('./views/pages/wallet_transactions/List.js'))
+const LootList = React.lazy(() => import('./views/pages/loots/List.js'))
 
 const RoomList = React.lazy(() => import('./views/pages/rooms/List.js'))
 const RoomShow = React.lazy(() => import('./views/pages/rooms/Show.js'))
@@ -25,6 +26,8 @@ const routes = [
   { path: '/wallet_transactions', name: 'Wallet Transactions', element: WalletTransactionList },
 
   { path: '/rooms', name: 'Rooms', element: RoomList },
+  { path: '/loots', name: 'Loots', element: LootList },
+
   { path: '/rooms/show/:id', name: 'Show Room', element: RoomShow },
 
 

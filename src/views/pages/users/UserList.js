@@ -16,6 +16,8 @@ import {
 import axios from 'axios'
 import CIcon from '@coreui/icons-react'
 import { cilPeople } from '@coreui/icons'
+import config from '../../../config';
+
 
 import avatar1 from 'src/assets/images/avatars/1.jpg'
 import avatar2 from 'src/assets/images/avatars/2.jpg'
@@ -31,7 +33,7 @@ const UserList = () => {
   const itemsPerPage = 10
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/admin/users')
+    axios.get(`${config.backendUrl}/api/admin/users`)
       .then((response) => {
         setUsers(response.data)
       })

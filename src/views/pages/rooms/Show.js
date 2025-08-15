@@ -78,8 +78,8 @@ const RoomDetail = () => {
           <ul>
             {room.players.map((player) => (
               <li key={player._id}>
-                <strong>{player.user_name}</strong> (ID: {player.player_id}) -{' '}
-                <span className="text-muted">Avatar: {player.avatar}</span>
+                <strong>{player.user_name}</strong> (ID: {player.player_id}) {' '}
+                {/* <span className="text-muted">Avatar: {player.avatar}</span> */}
               </li>
             ))}
           </ul>

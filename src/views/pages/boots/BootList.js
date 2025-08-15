@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
+import config from '../../../config';
+
 import {
   CCard, CCardBody, CTable, CTableHead, CTableHeaderCell,
   CTableRow, CTableBody, CTableDataCell, CButton,
@@ -24,7 +26,7 @@ const BootList = () => {
 
   const fetchBoots = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/admin/boots');
+      const response = await axios.get(`${config.backendUrl}/api/admin/boots`);
       setBoots(response.data || []);
     } catch (error) {
       console.error('Error fetching boots:', error);
@@ -39,7 +41,7 @@ const BootList = () => {
 
   const confirmDelete = async () => {
     try {
-      const res = await axios.delete(`http://localhost:5000/api/admin/boots/${deleteId}`);
+      const res = await axios.delete(`${config.backendUrl}/api/admin/boots/${deleteId}`);
       toast.success(res.data.message || 'Boot deleted successfully');
       setVisibleModal(false);
 
